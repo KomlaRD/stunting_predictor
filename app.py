@@ -42,7 +42,7 @@ if predict_button:
     # Make sure the age_in_months is not None
     if age is not None:
         # Employ the loaded model for the stunting prediction
-        prediction = model.predict(np.array([[age, weight, lenhei]]))
+        prediction = model.predict(np.array([[age, lenhei, weight]]))
         # Conditionally display the result of the stunting prediction
         if prediction == 1:
             st.success('The child is stunted. Refer to a nutrition professional for further assessment')
