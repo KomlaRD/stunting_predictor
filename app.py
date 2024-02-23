@@ -7,7 +7,7 @@ from datetime import date
 model = joblib.load('model.joblib')
 
 logo = "logo.webp"
-st.image(logo, width=80, height=80)
+st.image(logo, width=300)
 
 # Title of the web app
 st.title('Child Stunting Prediction Tool')
