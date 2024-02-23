@@ -6,6 +6,9 @@ from datetime import date
 # Load the trained model
 model = joblib.load('model.joblib')
 
+logo = "logo.webp"
+st.image(logo, width=80, height=80)
+
 # Title of the web app
 st.title('Child Stunting Prediction Tool')
 
