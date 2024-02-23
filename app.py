@@ -32,8 +32,8 @@ else:
     age = st.number_input('Enter the Age in Days', min_value=0.0, format="%.2f", step=0.01)
 
 # Collect other necessary data for prediction
-weight = st.number_input('Weight in kg', step=0.1)
-lenhei = st.number_input('Height in cm', step=0.1)
+weight = st.number_input('Weight in kg', step=0.01)
+lenhei = st.number_input('Height in cm', step=0.01)
 
 # Button for the user to click to perform the prediction
 predict_button = st.button('Predict Stunting')
