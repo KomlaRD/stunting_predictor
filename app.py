@@ -26,7 +26,7 @@ if age_input_method == 'Automatic Age Calculation':
 
     # Compute and show the computed age in days
     age = calculate_age_in_days(date_of_birth, date_of_assessment)
-    st.write(f"Calculated Age in Months: {age:.2f}")
+    st.write(f"Calculated Age in Days: {age:.2f}")
 else:
     # Allow the user to manually enter the age in months
     age = st.number_input('Enter the Age in Days', min_value=0.0, format="%.2f", step=0.01)
