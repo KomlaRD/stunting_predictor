@@ -41,6 +41,7 @@ if age_input_method == 'Automatic Age Calculation':
 else:
     # Allow the user to manually enter the age in months
     age = st.number_input('Enter the Age in Days', min_value=0.0, format="%.2f", step=0.01)
+    
 # Validate age range
 if age is not None and age > 1825:  # 5 years * 365 days
     st.error("Child is more than 5 years old.")
@@ -58,8 +59,8 @@ if st.button('Reset'):
 predict_button = st.button('Predict Stunting')
 
 if predict_button:
-    # Make sure the age_in_months is not None
-    if age is not None:
+    # Make sure the age in days is not None, weight and lenehi is greater than 0
+    if age is not None and weight > 0 and lenhei > 0:
         # Employ the loaded model for the stunting prediction
         prediction = model.predict(np.array([[age, lenhei, weight]]))
         # Conditionally display the result of the stunting prediction
