@@ -6,11 +6,13 @@ from datetime import date
 # Load the trained model
 model = joblib.load('model.joblib')
 
+# Logo
 logo = "logo.webp"
 st.image(logo, width=300)
 
 # Title of the web app
 st.title('Child Stunting Prediction Tool')
+st.write("Tool for predicting stunting among children under five years in Ghana")
 
 # Author information
 st.markdown('**Author:** Eric Anku')
