@@ -26,20 +26,20 @@ age_input_method = st.radio("Select Age Input Method", ['Automatic Age Calculati
 # Initialize an age_in_months variable
 age = None
 
+# Function to calculate the age in months
+def calculate_age_in_days(dob, current_date):
+    return (current_date - dob).days
+
 if age_input_method == 'Automatic Age Calculation':
     # Get birth date and date of visit from user
     date_of_birth = st.date_input("Date of Birth")
     date_of_assessment = st.date_input("Date of Visit", min_value=date_of_birth, value=date.today())
     if date_of_assessment < date_of_birth:
         st.error("Date of Visit cannot be before Date of Birth. Please check the dates.")   
-    
-    # Function to calculate the age in months
-    def calculate_age_in_days(dob, current_date):
-        return (current_date - dob).days
-
-    # Compute and show the computed age in days
-    age = calculate_age_in_days(date_of_birth, date_of_assessment)
-    st.write(f"Calculated Age in Days: {age}")
+    else:
+        # Compute and show the computed age in days
+        age = calculate_age_in_days(date_of_birth, date_of_assessment)
+        st.write(f"Calculated Age in Days: {age}")
 else:
     # Allow the user to manually enter the age in months
     age = st.number_input('Enter the Age in Days', min_value=0.0, format="%.2f", step=0.01)
