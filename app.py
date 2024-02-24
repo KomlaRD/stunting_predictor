@@ -43,8 +43,8 @@ else:
     age = st.number_input('Enter the Age in Days', min_value=0.0, format="%.2f", step=0.01)
 
 # Collect other necessary data for prediction
-weight = st.number_input('Weight in kg', step=0.01)
-lenhei = st.number_input('Height in cm', step=0.01)
+weight = st.number_input('Weight in kg', min_value=0.01, step=0.01)
+lenhei = st.number_input('Height in cm', min_value=0.01, step=0.01)
 
 # Reset button
 if st.button('Reset'):
