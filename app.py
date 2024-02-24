@@ -6,10 +6,6 @@ from datetime import date
 # Load the trained model
 model = joblib.load('model.joblib')
 
-# Reset functionality
-if 'reset' not in st.session_state:
-    st.session_state['reset'] = False
-
 logo = "logo.webp"
 st.image(logo, width=300)
 
@@ -51,11 +47,6 @@ if age is not None and age > 1825:  # 5 years * 365 days
 # Collect other necessary data for prediction
 weight = st.number_input('Weight in kg', min_value=0.01, step=0.01)
 lenhei = st.number_input('Height in cm', min_value=0.01, step=0.01)
-
-# Reset button
-if st.button('Reset'):
-    st.session_state['reset'] = True
-    st.experimental_rerun()
 
 # Button for the user to click to perform the prediction
 predict_button = st.button('Predict Stunting')
