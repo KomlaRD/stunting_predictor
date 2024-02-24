@@ -42,7 +42,7 @@ if age_input_method == 'Automatic Age Calculation':
         st.write(f"Calculated Age in Days: {age}")
 else:
     # Allow the user to manually enter the age in months
-    age = st.number_input('Enter the Age in Days', min_value=0.0, format="%.2f", step=0.01)
+    age = st.number_input('Enter the Age in Days', min_value=0.0, step=0.01)
     
 # Validate age range
 if age is not None and age > 1825:  # 5 years * 365 days
