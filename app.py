@@ -41,7 +41,10 @@ if age_input_method == 'Automatic Age Calculation':
 else:
     # Allow the user to manually enter the age in months
     age = st.number_input('Enter the Age in Days', min_value=0.0, format="%.2f", step=0.01)
-
+# Validate age range
+if age is not None and age > 1825:  # 5 years * 365 days
+    st.error("Child is more than 5 years old.")
+    
 # Collect other necessary data for prediction
 weight = st.number_input('Weight in kg', min_value=0.01, step=0.01)
 lenhei = st.number_input('Height in cm', min_value=0.01, step=0.01)
