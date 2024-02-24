@@ -6,6 +6,10 @@ from datetime import date
 # Load the trained model
 model = joblib.load('model.joblib')
 
+# Reset functionality
+if 'reset' not in st.session_state:
+    st.session_state['reset'] = False
+
 logo = "logo.webp"
 st.image(logo, width=300)
 
@@ -22,7 +26,7 @@ if age_input_method == 'Automatic Age Calculation':
     # Get birth date and date of visit from user
     date_of_birth = st.date_input("Date of Birth")
     date_of_assessment = st.date_input("Date of Visit", min_value=date_of_birth, value=date.today())
-
+    
     # Function to calculate the age in months
     def calculate_age_in_days(dob, current_date):
         return (current_date - dob).days
