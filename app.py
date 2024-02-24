@@ -16,6 +16,10 @@ st.image(logo, width=300)
 # Title of the web app
 st.title('Child Stunting Prediction Tool')
 
+# Author information
+st.markdown('**Author:** Eric Anku')
+st.markdown('**Email:** ankueric1@gmail.com')
+
 # Toggle for the user to choose between date-based age calculation or a manual option
 age_input_method = st.radio("Select Age Input Method", ['Automatic Age Calculation', 'Manual Entry'])
 
