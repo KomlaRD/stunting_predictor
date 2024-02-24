@@ -21,10 +21,10 @@ st.markdown('**Email:** ankueric1@gmail.com')
 # Toggle for the user to choose between date-based age calculation or a manual option
 age_input_method = st.radio("Select Age Input Method", ['Automatic Age Calculation', 'Manual Entry'])
 
-# Initialize an age_in_months variable
+# Initialize an age in days variable
 age = None
 
-# Function to calculate the age in months
+# Function to calculate the age in days
 def calculate_age_in_days(dob, current_date):
     return (current_date - dob).days
 
@@ -32,6 +32,7 @@ if age_input_method == 'Automatic Age Calculation':
     # Get birth date and date of visit from user
     date_of_birth = st.date_input("Date of Birth")
     date_of_assessment = st.date_input("Date of Visit", min_value=date_of_birth, value=date.today())
+    
     if date_of_assessment < date_of_birth:
         st.error("Date of Visit cannot be before Date of Birth. Please check the dates.")   
     else:
