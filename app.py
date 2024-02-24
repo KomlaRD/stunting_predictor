@@ -46,6 +46,11 @@ else:
 weight = st.number_input('Weight in kg', step=0.01)
 lenhei = st.number_input('Height in cm', step=0.01)
 
+# Reset button
+if st.button('Reset'):
+    st.session_state['reset'] = True
+    st.experimental_rerun()
+
 # Button for the user to click to perform the prediction
 predict_button = st.button('Predict Stunting')
 
