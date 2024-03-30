@@ -4,7 +4,7 @@ import numpy as np
 from datetime import date
 
 # Load the trained model
-model = joblib.load('model.joblib')
+model = joblib.load('xgb.joblib')
 
 # Logo
 logo = "logo.webp"
